@@ -31,7 +31,7 @@ foreach ($workItem in $workitems) {
     Write-Host "New priority: $($newPrio)"
     
     # Work Item bearbeiten
-    Set-ADOWorkItem -Project $teamProjectName -ID $workItem.ID -ApiVersion $apiVersion -Tag 'UpdatedByPrioritizeScript' -InputObject @{
+    Set-ADOWorkItem -Project $Project -ID $workItem.ID -ApiVersion $apiVersion -Tag 'UpdatedByPrioritizeScript' -InputObject @{
         "Microsoft.VSTS.Common.Priority" = $newPrio;}
     Write-Host "Update was successful"
 }
