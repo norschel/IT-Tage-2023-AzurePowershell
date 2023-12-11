@@ -25,8 +25,8 @@ $workitems = Get-ADOWorkItem -Project $Project -Query "$query" -ApiVersion $apiV
 
 foreach ($workItem in $workitems) {
     write-host "Updating work item $($workItem.ID) - $($workitem."System.Title")"
-    $oldValue = $workItem."Microsoft.VSTS.Common.Priority";
-    $newValue = 1;
+    $oldPrio = $workItem."Microsoft.VSTS.Common.Priority";
+    $newPrio = 1;
     Write-Host "Old priority: $($oldPrio)"
     Write-Host "New priority: $($newPrio)"
     
