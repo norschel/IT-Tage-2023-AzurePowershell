@@ -35,7 +35,7 @@ $body =
     {  
         "op": "add",
         "path": "/fields/System.Title",
-        "value": "Hello Basta"
+        "value": "Hello IT-Tage"
     }
 ]'
 
