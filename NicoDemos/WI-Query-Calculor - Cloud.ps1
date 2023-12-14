@@ -15,10 +15,10 @@ param (
 Install-Module -Name PSDevOps -Verbose
 
 #$serverUrl = "https://devtfs2019/tfs";
-$apiVersion = "5.0";
+$apiVersion = "6.0";
 
 #$query = "Select [System.ID],[Microsoft.VSTS.Scheduling.Effort] from WorkItems where [Changed Date] >= @StartofDay('-14d') and [Changed Date] <= @StartofDay('-7d')"
-$query = "Select [System.ID],[Microsoft.VSTS.Scheduling.Effort] from WorkItems where [Changed Date] >= @StartofDay('-1')"
+$query = "Select [System.ID],[Microsoft.VSTS.Scheduling.Effort] from WorkItems where System.WorkItemType = 'Product Backlog Item' and [Changed Date] >= @StartofDay('-1')"
 
 $workitems = Get-ADOWorkItem -Organization $collectionName -Project $teamProjectName -Query "$query" -PAT $pat -ApiVersion $apiVersion -Fields Microsoft.VSTS.Scheduling.Effort,System.Title,System.Id
 
